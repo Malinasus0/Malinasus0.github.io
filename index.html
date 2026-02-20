@@ -1,10 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Meu Site</title>
+<meta charset="UTF-8">
+<title>Rainbow Clown Lo-Fi 🎪🌈</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: linear-gradient(-45deg, #ff9ad5, #ff6ec7, #a18cd1, #fbc2eb);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color: white;
+  overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h1 {
+  margin-top: 40px;
+  font-size: 55px;
+  text-shadow: 0 0 15px #fff;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+.card {
+  width: 350px;
+  margin: 40px auto;
+  background: rgba(255,255,255,0.15);
+  padding: 20px;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(255,255,255,0.5);
+  transition: transform 0.4s ease;
+}
+
+.card:hover {
+  transform: scale(1.08);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.rainbow-text {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+</style>
 </head>
+
 <body>
-  <h1>Olá Mundo!</h1>
-  <p>Esse é meu primeiro site.</p>
+
+<h1>🎪 Rainbow Clown Lo-Fi 🌈</h1>
+
+<div class="card">
+  <!-- Suba sua imagem no GitHub e coloque o nome aqui -->
+  <img src="clown.png">
+  <p class="rainbow-text">Arte vibrante, doce e cheia de personalidade 🎨</p>
+</div>
+
+<footer>
+Clique na tela para ativar a música 🎶
+</footer>
+
+<!-- Música Lo-Fi -->
+<audio autoplay loop muted id="music">
+  <source src="lofi-clown.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  document.body.addEventListener("click", function() {
+    const music = document.getElementById("music");
+    music.muted = false;
+    music.play();
+  });
+</script>
+
 </body>
 </html>
+
