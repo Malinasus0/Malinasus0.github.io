@@ -1,6 +1,6 @@
 <!-- Música -->
 <audio id="music" loop>
-  <source src="lofi-clown.mp3" type="audio/mpeg">
+ <source src="Carrossel em Câmera Lenta.mp3" type="audio/mpeg">
 </audio>
 
 <!-- Botão estiloso -->
@@ -44,3 +44,4 @@ button.addEventListener("click", function() {
   }
 });
 </script>
+
