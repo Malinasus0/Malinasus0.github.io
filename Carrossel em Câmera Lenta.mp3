@@ -1,11 +1,46 @@
-<audio autoplay loop muted id="music">
+<!-- Música -->
+<audio id="music" loop>
   <source src="lofi-clown.mp3" type="audio/mpeg">
 </audio>
 
+<!-- Botão estiloso -->
+<button id="musicBtn">🎶 Ligar Música</button>
+
+<style>
+#musicBtn {
+  margin-top: 30px;
+  padding: 15px 35px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(45deg, #ff6ec7, #a18cd1);
+  box-shadow: 0 0 15px #ff6ec7;
+  transition: 0.3s ease;
+}
+
+#musicBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #ffffff;
+}
+</style>
+
 <script>
-  document.body.addEventListener("click", function() {
-    const music = document.getElementById("music");
-    music.muted = false;
+const music = document.getElementById("music");
+const button = document.getElementById("musicBtn");
+
+let isPlaying = false;
+
+button.addEventListener("click", function() {
+  if (!isPlaying) {
     music.play();
-  });
+    button.textContent = "🔇 Desligar Música";
+    isPlaying = true;
+  } else {
+    music.pause();
+    button.textContent = "🎶 Ligar Música";
+    isPlaying = false;
+  }
+});
 </script>
